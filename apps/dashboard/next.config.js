@@ -31,6 +31,10 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_TEST: 'test',
   },
+
+  sentry: {
+    widenClientFileUpload: true,
+  },
 }
 
 const sentryWebpackPluginOptions = {
@@ -49,24 +53,4 @@ const sentryWebpackPluginOptions = {
   // https://github.com/getsentry/sentry-webpack-plugin#options.
 }
 
-module.exports = async (phase, defaultConfig) => {
-  const nextPlugins = [
-    // other plugins
-    (nConfig) => {
-      return withSentryConfig(nConfig, sentryWebpackPluginOptions)
-    },
-  ]
-
-  const config = nextPlugins.reduce(
-    (prev, plugin) => {
-      const update = plugin(prev)
-      return typeof update === 'function'
-        ? update(phase, defaultConfig)
-        : update
-    },
-    { ...nextConfig },
-  )
-
-  console.log('config', config)
-  return config
-}
+module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions)
