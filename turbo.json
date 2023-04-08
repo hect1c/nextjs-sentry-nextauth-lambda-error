@@ -1,0 +1,78 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "//#build:sst": {
+      "dependsOn": [
+        "^build:sst"
+      ],
+      "outputs": [
+        ".sst/*"
+      ],
+      "env": [
+        "CI_COMMIT_BRANCH",
+        "AWS_CERTIFICATE_ARN",
+        "AWS_LAMBDA_EDGE_TIMEOUT",
+        "AWS_LAMBDA_EDGE_MEMORY_SIZE"
+      ],
+      "inputs": [
+        "apps/infra/**",
+        "src/**/*.{ts,tsx,graphql}",
+        "src/!(__generated__)/**",
+        "src/**/!(__generated__)/**"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "src/**/__generated/**/*",
+        "src/__generated__/*",
+        "src/modules/core/intl/lang/compiled/*"
+      ],
+      "inputs": [
+        "src/**/*.{ts,tsx,graphql}",
+        "src/!(__generated__)/**",
+        "src/**/!(__generated__)/**"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "test": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "coverage/*",
+        "reports/*",
+        "logs/*",
+        ".nyc_output/*"
+      ],
+      "inputs": [
+        "src/**/*.{ts,tsx,graphql}",
+        "cypress/**",
+        "src/!(__generated__)/**",
+        "src/**/!(__generated__)/**"
+      ]
+    },
+    "//#deploy": {
+      "dependsOn": [
+        "^build:sst"
+      ]
+    },
+    "lint": {},
+    "clean": {
+      "cache": false
+    }
+  },
+  "globalEnv": [
+    "AWS_REGION",
+    "NEXT_PUBLIC_BUILD_ENV",
+    "NEXTAUTH_URL",
+    "NEXTAUTH_SECRET"
+  ]
+}

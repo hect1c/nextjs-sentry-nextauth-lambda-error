@@ -1,0 +1,16 @@
+{
+  "name": "@palqee/infra",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "typescript": "^5.0.2"
+  }
+}

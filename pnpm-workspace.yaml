@@ -1,0 +1,5 @@
+packages:
+  - "apps/**/*"
+  - '!**/test/**'
+  - '!**/.next/**'
+  - '!**/.open-next/**'

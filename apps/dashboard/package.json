@@ -1,0 +1,37 @@
+{
+  "name": "next-auth-example",
+  "private": true,
+  "description": "An example project for NextAuth.js with Next.js",
+  "repository": "https://github.com/nextauthjs/next-auth-example.git",
+  "bugs": {
+    "url": "https://github.com/nextauthjs/next-auth/issues"
+  },
+  "homepage": "https://next-auth-example.vercel.app",
+  "scripts": {
+    "dev": "next",
+    "prebuild": "pnpm run clean",
+    "build": "next build",
+    "start": "next start",
+    "clean": "rm -rf .next"
+  },
+  "author": "Iain Collins <me@iaincollins.com>",
+  "contributors": [
+    "Balázs Orbán <info@balazsorban.com>",
+    "Nico Domino <yo@ndo.dev>",
+    "Lluis Agusti <hi@llu.lu>"
+  ],
+  "dependencies": {
+    "@sentry/nextjs": "^7.47.0",
+    "lodash": "^4.17.21",
+    "next": "13.1.7-canary.32",
+    "next-auth": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.192",
+    "@types/node": "^17",
+    "@types/react": "^18.0.15",
+    "typescript": "^4"
+  }
+}

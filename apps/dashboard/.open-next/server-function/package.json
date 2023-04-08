@@ -1,0 +1,68 @@
+{
+  "name": "palqee-root",
+  "private": true,
+  "description": "Palqee Monorepo",
+  "version": "0.0.3",
+  "homepage": "https://palqee.com",
+  "author": "Hartley Jean-Aimee <hartley@palqee.com>",
+  "engines": {
+    "node": ">= 16.0.0"
+  },
+  "contributors": [
+    {
+      "name": "Hartley Jean-Aimee",
+      "email": "hartley@palqee.com",
+      "url": "https://gitlab.com/yeltrah"
+    }
+  ],
+  "keywords": [
+    "palqee",
+    "nextjs",
+    "graphql"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build:dashboard": "turbo run build --filter=next-auth-example",
+    "clean": "rm -rf ./.sst/* ./{{apps}/*,dashboard}/{.next,.turbo,src/__generated/*,src/**/__generated/*}",
+    "dev": "turbo run dev --filter=next-auth-example",
+    "analyze:dashboard": "pnpm run --filter=next-auth-example analyze",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "build:sst": "sst build",
+    "deploy": "sst deploy --from .sst/dist",
+    "remove": "sst remove",
+    "console": "sst console",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky install config/.husky"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "dependencies": {
+    "dotenv-flow": "^3.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.3.0",
+    "@commitlint/config-conventional": "^16.2.4",
+    "@seed-run/cli": "^0.1.2",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.1",
+    "@semantic-release/gitlab": "^6.2.2",
+    "@semantic-release/release-notes-generator": "^9.0.3",
+    "@tsconfig/node16": "^1.0.3",
+    "@types/dotenv-flow": "^3.2.0",
+    "@types/node": "^14.18.41",
+    "aws-cdk-lib": "2.73.0",
+    "constructs": "10.1.304",
+    "esbuild": "0.15.18",
+    "eslint-config-turbo": "^0.0.10",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "semantic-release-slack-bot": "^3.5.3",
+    "sst": "^2.4.1",
+    "turbo": "^1.8.6",
+    "typescript": "^5.0.2"
+  }
+}
