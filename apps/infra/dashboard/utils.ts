@@ -10,7 +10,7 @@ export const setDomainPrefix = () => {
 }
 
 export const setEnvironmentVariables = (): Record<string, string> => {
-  const keys = ['NEXT_PUBLIC_BUILD_ENV', 'NEXTAUTH_URL', 'NEXTAUTH_SECRET']
+  const keys = ['NEXT_PUBLIC_BUILD_ENV', 'NEXTAUTH_URL', 'NEXTAUTH_SECRET', 'NEXT_PUBLIC_SUPPORTED_LOCALES']
 
   const environment = {} as Record<string, string>
 

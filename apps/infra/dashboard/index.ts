@@ -11,6 +11,7 @@ export function PalqeeNextjsWebAppStack(props: StackContext) {
     environment: setEnvironmentVariables(),
     timeout: Number(process.env.AWS_LAMBDA_EDGE_TIMEOUT),
     memorySize: Number(process.env.AWS_LAMBDA_EDGE_MEMORY_SIZE),
+    edge: true,
   })
 
   stack.addDefaultFunctionPermissions('*')

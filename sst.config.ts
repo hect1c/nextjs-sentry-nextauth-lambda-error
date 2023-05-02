@@ -13,8 +13,8 @@ export default {
     return {
       ..._input,
       name: 'pq',
-      stage: process.env.NEXT_PUBLIC_BUILD_ENV,
-      region: process.env.AWS_REGION,
+      stage: 'develop',
+      region: 'us-east-1',
     }
   },
   stacks(app: App) {

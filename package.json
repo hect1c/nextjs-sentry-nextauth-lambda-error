@@ -61,7 +61,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "semantic-release-slack-bot": "^3.5.3",
-    "sst": "^2.4.1",
+    "sst": "^2.7.2",
     "turbo": "^1.8.6",
     "typescript": "^5.0.2"
   }

@@ -10,14 +10,13 @@ export default withAuth({
   },
   callbacks: {
     authorized({ token }) {
-      return !!token
+      return true || !!token
     },
   },
 })
 
 export const config = {
   matcher: [
-    '/((?!api|.*/employees|auth|.*\\..*|static|_next).*)',
-    '/:companyId/(account|dashboard|documents|dsar|onboarding|respondents|support|surveys|index*)',
+    '/((?!api|.*/employees|.*\\..*|static|_next).*)',
   ],
 }

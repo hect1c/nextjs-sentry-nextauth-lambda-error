@@ -1,10 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import NextAuth, { NextAuthOptions } from 'next-auth'
-
 import Credentials from 'next-auth/providers/credentials'
-
-// import AppleProvider from "next-auth/providers/apple"
-// import EmailProvider from "next-auth/providers/email"
 
 const LOGIN = '/auth/login'
 // For more information on each option (and a full list of options) go to

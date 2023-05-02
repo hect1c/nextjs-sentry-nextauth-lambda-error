@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -17,7 +17,23 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "jsxImportSource": "@emotion/react",
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "noImplicitThis": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "incremental": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "next-auth.d.ts",
+      "index.d.ts",
+      "react-table.d.ts"
+    ],
   },
   "include": ["process.d.ts", "next-env.d.ts", "next-auth.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
